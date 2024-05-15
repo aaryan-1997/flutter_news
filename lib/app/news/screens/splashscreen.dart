@@ -2,12 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_news/app/news/screens/homescreen.dart';
 
+import '../../core/widgets/apptext.dart';
+import '../../mobile_ads.dart';
 import '../utils/appcolors.dart';
 import '../utils/appconstants.dart';
 import '../utils/helper/data_functions.dart';
-import '../../core/widgets/apptext.dart';
-import 'homescreen.dart';
 import 'onboardingscreen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -41,10 +42,9 @@ class _SplashScreenState extends State<SplashScreen> {
         () => Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                  builder:
-                      (context) => setdoneOnboarding.toString() == "YES"
-                          ? const HomeScreen()
-                          : const OnboardingScreen()),
+                  builder: (context) => setdoneOnboarding.toString() == "YES"
+                      ? const GoogleMobileAd()
+                      : const OnboardingScreen()),
             ));
   }
 
